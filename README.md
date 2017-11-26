@@ -1,24 +1,8 @@
-# README
+[![Build Status](https://semaphoreci.com/api/v1/insurance-fraud/pcc/branches/master/shields_badge.svg)](https://semaphoreci.com/insurance-fraud/pcc)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# pcc
 
-Things you may want to cover:
+Payment Card Center
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Handles communication between **acquire-it - insurance seller's bank** and
+**issue-it - buyer's bank**.
