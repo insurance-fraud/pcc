@@ -6,3 +6,12 @@ Payment Card Center
 
 Handles communication between **acquire-it - insurance seller's bank** and
 **issue-it - buyer's bank**.
+
+## Running
+
+Running is easy, just do:
+
+```
+docker-compose build
+docker-compose up
+```
