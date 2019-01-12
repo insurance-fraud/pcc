@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20190112165830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "issuers", force: :cascade do |t|
+    t.string "pan"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string "pan"
+    t.integer "security_code"
+    t.string "expiry_date"
+    t.string "card_holder_name"
+    t.integer "acquirer_order_id"
+    t.datetime "acquirer_order_timestamp"
+    t.integer "issuer_order_id"
+    t.datetime "issuer_order_timestamp"
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
