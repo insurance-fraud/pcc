@@ -1,13 +1,18 @@
 version: '2'
 services:
-  db:
+  pcc.db:
     image: postgres
-  web:
+  pcc.web:
     build: .
-    command: bundle exec rails s -p 5001 -b '0.0.0.0'
+    environment:
+      - DB_USERNAME=postgres
+      - DB_HOST=db
+    command: bundle exec rails s -p 5000 -b '0.0.0.0'
     volumes:
       - .:/pcc
     ports:
-      - "5001:5001"
+      - "5000:5000"
+    links:
+      - pcc.db:db
     depends_on:
-      - db
+      - pcc.db
