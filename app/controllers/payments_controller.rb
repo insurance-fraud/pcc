@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+  ISSUE_IT_URL = ENV["ISSUE_IT_URL"] || 'http://localhost:5001'
+
   def pay
     issuer = Issuer.find_by_pan(params[:pan])
     payment = Payment.create(pan: params[:pan],
@@ -20,7 +22,7 @@ class PaymentsController < ApplicationController
     }
 
     resp = HTTParty.post(
-      'http://localhost:6000/payments/pay',
+      "#{ISSUE_IT_URL}/payments/pay",
       body: issue_it_body,
       timeout: 5
     )
